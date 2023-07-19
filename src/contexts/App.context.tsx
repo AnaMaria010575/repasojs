@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
 
-interface user {
-
+interface User {
     name: string;
     email: string;
     role: string;
@@ -19,22 +18,20 @@ interface AppContextI {
     setUser: (value: User) => void
 }
 
-export const AppContext = React.createContext({}) as AppContextI;
+export const AppContext = React.createContext({} as AppContextI);
 
-export const Provider = () => ({ Children }: any) => {
+export const Provider = () => ({ children }: any) => {
 
     const [token, setToken] = useState<string>('');
     const [user, setUser] = useState<User | null>(null);
-        
-        const value = {
 
-            token,
-            setToken,
-            user,
-            setUser
-        }
-
-
-return(<AppContext.Provider value={ values } > { children }</AppContext.Provider >.Provider >)
-
+    const values = {
+        token,
+        setToken,
+        user,
+        setUser
     }
+
+    return (<AppContext.Provider value={values}>{children}</AppContext.Provider>)
+
+}
