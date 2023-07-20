@@ -1,4 +1,4 @@
-import img from './assets/imagenes/marie.jpg/'
+import img from './assets/imagenes/marie.jpg'
 export const App = () => {
     return (
         <>
